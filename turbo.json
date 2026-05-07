@@ -14,7 +14,8 @@
         "!mod.js",
         "!mod.js.map"
       ],
-      "outputs": ["src/**/*.prebuilt*"]},
+      "outputs": ["src/**/*.prebuilt*"]
+    },
     "build": {
       "dependsOn": ["^build", "prebuild"],
       "inputs": [
