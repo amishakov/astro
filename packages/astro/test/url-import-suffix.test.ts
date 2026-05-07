@@ -8,8 +8,10 @@ describe('imports using ?url suffix', () => {
 	const assetName = 'index.DqQksVyv.css';
 
 	before(async () => {
-		fixture = await loadFixture({ root: './fixtures/url-import-suffix/',
-			outDir: './dist/url-import-suffix-imports-using-url-suffix/', });
+		fixture = await loadFixture({
+			root: './fixtures/url-import-suffix/',
+			outDir: './dist/url-import-suffix-imports-using-url-suffix/',
+		});
 		await fixture.build();
 	});
 
@@ -32,8 +34,10 @@ describe('imports using ?url&no-inline suffix', () => {
 	const assetName = 'style.3WhucSPm.css';
 
 	before(async () => {
-		fixture = await loadFixture({ root: './fixtures/url-import-suffix/',
-			outDir: './dist/url-import-suffix-imports-using-url-no-inline-suffix/', });
+		fixture = await loadFixture({
+			root: './fixtures/url-import-suffix/',
+			outDir: './dist/url-import-suffix-imports-using-url-no-inline-suffix/',
+		});
 		await fixture.build();
 	});
 

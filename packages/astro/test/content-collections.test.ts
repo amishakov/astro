@@ -42,8 +42,10 @@ describe('Content Collections', () => {
 	describe('Query', () => {
 		let fixture: Fixture;
 		before(async () => {
-			fixture = await loadFixture({ root: './fixtures/content-collections/',
-				outDir: './dist/content-collections-query/', });
+			fixture = await loadFixture({
+				root: './fixtures/content-collections/',
+				outDir: './dist/content-collections-query/',
+			});
 			await fixture.build({ force: true });
 		});
 
@@ -205,8 +207,10 @@ describe('Content Collections', () => {
 		let fixture: Fixture;
 
 		before(async () => {
-			fixture = await loadFixture({ root: './fixtures/content-static-paths-integration/',
-				outDir: './dist/content-collections-static-paths/', });
+			fixture = await loadFixture({
+				root: './fixtures/content-static-paths-integration/',
+				outDir: './dist/content-collections-static-paths/',
+			});
 			await fixture.build({ force: true });
 		});
 
@@ -238,8 +242,10 @@ describe('Content Collections', () => {
 
 	describe('With spaces in path', () => {
 		it('Does not throw', async () => {
-			const fixture = await loadFixture({ root: './fixtures/content with spaces in folder name/',
-				outDir: './dist/content-collections-spaces-in-path/', });
+			const fixture = await loadFixture({
+				root: './fixtures/content with spaces in folder name/',
+				outDir: './dist/content-collections-spaces-in-path/',
+			});
 			let error: string | null = null;
 			try {
 				await fixture.build({ force: true });

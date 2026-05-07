@@ -31,8 +31,10 @@ describe('CSS production ordering', () => {
 		});
 
 		before(async () => {
-			let fixture = await loadFixture({ ...commonConfig,
-				outDir: './dist/css-order-ssg-and-ssr-parity/', });
+			let fixture = await loadFixture({
+				...commonConfig,
+				outDir: './dist/css-order-ssg-and-ssr-parity/',
+			});
 			await fixture.build();
 			staticHTML = await fixture.readFile('/one/index.html');
 			staticCSS = await Promise.all(

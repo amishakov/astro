@@ -7,8 +7,10 @@ describe('Slots: Preact', () => {
 	let fixture: Fixture;
 
 	before(async () => {
-		fixture = await loadFixture({ root: './fixtures/slots-preact/',
-			outDir: './dist/slots-preact/', });
+		fixture = await loadFixture({
+			root: './fixtures/slots-preact/',
+			outDir: './dist/slots-preact/',
+		});
 		await fixture.build();
 	});
 

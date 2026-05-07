@@ -7,8 +7,10 @@ describe('Code component', () => {
 	let fixture: Fixture;
 
 	before(async () => {
-		fixture = await loadFixture({ root: './fixtures/code-component/',
-			outDir: './dist/code-component/', });
+		fixture = await loadFixture({
+			root: './fixtures/code-component/',
+			outDir: './dist/code-component/',
+		});
 		await fixture.build();
 	});
 

@@ -13,8 +13,7 @@ describe('Environment Variables', () => {
 		before(async () => {
 			process.env.BOOLEAN_VAR = 'true';
 			process.env.NUMBER_VAR = '1';
-			fixture = await loadFixture({ root,
-				outDir: './dist/astro-envs-build/', });
+			fixture = await loadFixture({ root, outDir: './dist/astro-envs-build/' });
 			await fixture.build({});
 		});
 
@@ -111,8 +110,7 @@ describe('Environment Variables', () => {
 		let devServer: DevServer;
 
 		before(async () => {
-			fixture = await loadFixture({ root,
-				outDir: './dist/astro-envs-development/', });
+			fixture = await loadFixture({ root, outDir: './dist/astro-envs-development/' });
 			devServer = await fixture.startDevServer();
 		});
 		after(async () => {

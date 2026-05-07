@@ -6,8 +6,10 @@ import { type Fixture, loadFixture } from './test-utils.ts';
 describe('Content Collections - data collections', () => {
 	let fixture: Fixture;
 	before(async () => {
-		fixture = await loadFixture({ root: './fixtures/data-collections-schema/',
-			outDir: './dist/data-collections-schema/', });
+		fixture = await loadFixture({
+			root: './fixtures/data-collections-schema/',
+			outDir: './dist/data-collections-schema/',
+		});
 		removeDir(new URL('./fixtures/data-collections-schema/.astro', import.meta.url));
 		await fixture.build({});
 	});
@@ -55,7 +57,9 @@ describe('Content Collections - data collections', () => {
 		});
 
 		it('Preserves .meta() definitions in the generated JSON schema', async () => {
-			const schema = JSON.parse(await fixture.readFile('../../.astro/collections/i18n.schema.json'));
+			const schema = JSON.parse(
+				await fixture.readFile('../../.astro/collections/i18n.schema.json'),
+			);
 			assert.equal(schema.title, 'Translations');
 			assert.equal(schema.description, 'Translation strings for the site');
 		});
