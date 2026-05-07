@@ -58,7 +58,9 @@ describe('loadImage', () => {
 			new Headers(),
 			emptyConfig,
 			false,
-			async () => { throw new Error('network error'); },
+			async () => {
+				throw new Error('network error');
+			},
 		);
 		assert.equal(result, undefined);
 	});
