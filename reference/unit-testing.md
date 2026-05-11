@@ -34,32 +34,32 @@ The repo has shared test helpers and mocks. **Always check these before writing 
 
 ### `test/units/test-utils.ts` — Core infrastructure
 
-| Export | Use when… |
-|---|---|
-| `defaultLogger` | You need a logger instance (pre-configured at `'error'` level). |
-| `SpyLogger` | You need to assert on log output (captures all writes into a `.logs` array). |
-| `createBasicSettings(inlineConfig?)` | You need a real `AstroSettings` object without a full project. |
-| `createBasicPipeline(options?)` | You need a rendering pipeline without a dev server or build. |
-| `createFixture(tree)` | You need real files on disk (creates a temp directory from a file tree object). |
-| `createRequestAndResponse(reqOptions?)` | You need mock HTTP `req`/`res` objects with `.text()` and `.json()` helpers. |
-| `renderThroughMiddleware(state, component, slots?)` | You need to render through the full middleware chain. |
-| `createMockNext(response?)` | You need a mock `next()` for middleware testing. |
+| Export                                              | Use when…                                                                       |
+| --------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `defaultLogger`                                     | You need a logger instance (pre-configured at `'error'` level).                 |
+| `SpyLogger`                                         | You need to assert on log output (captures all writes into a `.logs` array).    |
+| `createBasicSettings(inlineConfig?)`                | You need a real `AstroSettings` object without a full project.                  |
+| `createBasicPipeline(options?)`                     | You need a rendering pipeline without a dev server or build.                    |
+| `createFixture(tree)`                               | You need real files on disk (creates a temp directory from a file tree object). |
+| `createRequestAndResponse(reqOptions?)`             | You need mock HTTP `req`/`res` objects with `.text()` and `.json()` helpers.    |
+| `renderThroughMiddleware(state, component, slots?)` | You need to render through the full middleware chain.                           |
+| `createMockNext(response?)`                         | You need a mock `next()` for middleware testing.                                |
 
 ### `test/units/mocks.ts` — Mock factories
 
-| Export | Use when… |
-|---|---|
-| `createMockAPIContext(overrides?)` | You need a mock `APIContext` with real cookies, redirect, rewrite. |
-| `createMockFetchState(overrides?)` | You need a minimal `FetchState` for functions that take one. |
-| `createResponseFunction(body?, init?)` | You need a page-rendering function for `callMiddleware`. |
-| `createTestApp(pages, manifestOverrides?)` | You need a real `App` instance with routes wired up. |
-| `createPage(component, routeConfig)` | You need a page entry for `createTestApp`. |
-| `createRedirect(routeConfig)` | You need a redirect route entry for `createTestApp`. |
-| `createEndpoint(handlers, routeConfig)` | You need an endpoint route entry for `createTestApp`. |
-| `createRouteData(overrides)` | You need a `RouteData` object with auto-generated segments. |
-| `spreadPropsSpan` | You need a simple component factory that renders `<span {...props}>`. |
-| `installImageService(overrides?)` | You need to set up a test image service on `globalThis.astroAsset`. |
-| `createMockAstroSource(html)` | You need a minimal `.astro` source string. |
+| Export                                     | Use when…                                                             |
+| ------------------------------------------ | --------------------------------------------------------------------- |
+| `createMockAPIContext(overrides?)`         | You need a mock `APIContext` with real cookies, redirect, rewrite.    |
+| `createMockFetchState(overrides?)`         | You need a minimal `FetchState` for functions that take one.          |
+| `createResponseFunction(body?, init?)`     | You need a page-rendering function for `callMiddleware`.              |
+| `createTestApp(pages, manifestOverrides?)` | You need a real `App` instance with routes wired up.                  |
+| `createPage(component, routeConfig)`       | You need a page entry for `createTestApp`.                            |
+| `createRedirect(routeConfig)`              | You need a redirect route entry for `createTestApp`.                  |
+| `createEndpoint(handlers, routeConfig)`    | You need an endpoint route entry for `createTestApp`.                 |
+| `createRouteData(overrides)`               | You need a `RouteData` object with auto-generated segments.           |
+| `spreadPropsSpan`                          | You need a simple component factory that renders `<span {...props}>`. |
+| `installImageService(overrides?)`          | You need to set up a test image service on `globalThis.astroAsset`.   |
+| `createMockAstroSource(html)`              | You need a minimal `.astro` source string.                            |
 
 ### Domain-specific helpers
 
