@@ -138,8 +138,10 @@ For longer descriptions, use `####` and deeper headings (never `##` or `###`) to
 Adds a new Sessions API to store user state between requests for on-demand rendered pages.
 
 #### Configuring session storage
+
 <!-- ... -->
 
 #### Using sessions
+
 <!-- ... -->
 ```

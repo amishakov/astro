@@ -75,10 +75,11 @@ The comment must start with an at-a-glance summary, followed by short explanatio
 ### Try this fix
 
 You can test this fix right now without waiting for a release:
-
 ```
+
 [For each URL in previewRelease.urls, output it as an npm install command on its own line, e.g.:]
 npm i <url>
+
 ```
 
 [End of conditional "Try this fix" section.]
