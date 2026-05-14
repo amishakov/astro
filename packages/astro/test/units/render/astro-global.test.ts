@@ -1,11 +1,7 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 import * as cheerio from 'cheerio';
-import {
-	createComponent,
-	render,
-	renderComponent,
-} from '../../../dist/runtime/server/index.js';
+import { createComponent, render, renderComponent } from '../../../dist/runtime/server/index.js';
 import { createTestApp, createPage } from '../mocks.ts';
 import { dynamicPart, staticPart } from '../routing/test-helpers.ts';
 import type { APIContext } from '../../../dist/types/public/context.js';
@@ -67,10 +63,10 @@ describe('Astro Global', () => {
 	describe('with site and base config', () => {
 		it('Astro.url propagates through parent, child, and nested-child components', async () => {
 			const page = createIndexPage();
-			const app = createTestApp(
-				[createPage(page, { route: '/', isIndex: true })],
-				{ base: '/blog', site: 'https://mysite.dev/subsite/' },
-			);
+			const app = createTestApp([createPage(page, { route: '/', isIndex: true })], {
+				base: '/blog',
+				site: 'https://mysite.dev/subsite/',
+			});
 			const response = await app.render(new Request('https://example.com/'));
 			const html = await response.text();
 			const $ = cheerio.load(html);
@@ -86,10 +82,9 @@ describe('Astro Global', () => {
 
 		it('Astro.site', async () => {
 			const page = createIndexPage();
-			const app = createTestApp(
-				[createPage(page, { route: '/', isIndex: true })],
-				{ site: 'https://mysite.dev/subsite/' },
-			);
+			const app = createTestApp([createPage(page, { route: '/', isIndex: true })], {
+				site: 'https://mysite.dev/subsite/',
+			});
 			const response = await app.render(new Request('https://example.com/'));
 			const html = await response.text();
 			const $ = cheerio.load(html);
@@ -180,10 +175,11 @@ describe('Astro Global', () => {
 	describe('SSR app', () => {
 		it('Astro.site', async () => {
 			const page = createIndexPage();
-			const app = createTestApp(
-				[createPage(page, { route: '/', isIndex: true })],
-				{ site: 'https://mysite.dev/subsite/', base: '/new', serverLike: true },
-			);
+			const app = createTestApp([createPage(page, { route: '/', isIndex: true })], {
+				site: 'https://mysite.dev/subsite/',
+				base: '/new',
+				serverLike: true,
+			});
 			const response = await app.render(new Request('https://example.com/'));
 			const html = await response.text();
 			const $ = cheerio.load(html);
@@ -249,9 +245,7 @@ describe('Astro Global', () => {
 describe('Astro Global Defaults', () => {
 	it('Astro.request.url with no site or base', async () => {
 		const page = createIndexPage();
-		const app = createTestApp(
-			[createPage(page, { route: '/', isIndex: true })],
-		);
+		const app = createTestApp([createPage(page, { route: '/', isIndex: true })]);
 		const response = await app.render(new Request('https://example.com/'));
 		const html = await response.text();
 		const $ = cheerio.load(html);
@@ -264,9 +258,7 @@ describe('Astro Global Defaults', () => {
 
 	it('Astro.site is undefined when no site configured', async () => {
 		const page = createIndexPage();
-		const app = createTestApp(
-			[createPage(page, { route: '/', isIndex: true })],
-		);
+		const app = createTestApp([createPage(page, { route: '/', isIndex: true })]);
 		const response = await app.render(new Request('https://example.com/'));
 		const html = await response.text();
 		const $ = cheerio.load(html);
