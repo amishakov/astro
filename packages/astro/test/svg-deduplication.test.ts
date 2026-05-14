@@ -70,5 +70,4 @@ describe('SVG Deduplication', () => {
 			assert.ok(html.includes('<svg'), 'SVGs should be inlined in HTML');
 		});
 	});
-
 });

@@ -24,5 +24,4 @@ describe('third-party .astro component', () => {
 			assert.equal($('h1').text(), 'Third-Party .astro test');
 		});
 	});
-
 });

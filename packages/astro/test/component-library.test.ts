@@ -96,5 +96,4 @@ describe('Component Libraries', () => {
 			assert.equal($('astro-island[uid]').length, 1, 'Included one hydration island');
 		});
 	});
-
 });

@@ -116,5 +116,4 @@ describe('Reuse injected entrypoint', () => {
 			});
 		});
 	});
-
 });

@@ -149,5 +149,4 @@ describe('Content Collections - render()', () => {
 			assert.equal($('[data-are-equal]').first().text(), 'false');
 		});
 	});
-
 });

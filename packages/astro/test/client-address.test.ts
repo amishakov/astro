@@ -40,7 +40,6 @@ describe('Astro.clientAddress', () => {
 				assert.equal($('#address').text(), '1.1.1.1');
 			});
 		});
-
 	});
 
 	describe('SSR adapter not implemented', () => {
@@ -89,6 +88,5 @@ describe('Astro.clientAddress', () => {
 				}
 			});
 		});
-
 	});
 });
