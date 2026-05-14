@@ -177,9 +177,9 @@ describe('astro:assets - SVG Components', () => {
 			});
 
 			it('should not log NoImageMetadata errors for zero dimension svgs', () => {
-				const hasMetadataErrors = logs.some(log => log.message.includes('NoImageMetadata'));
+				const hasMetadataErrors = logs.some((log) => log.message.includes('NoImageMetadata'));
 				assert.equal(hasMetadataErrors, false);
-			})
+			});
 		});
 	});
 
