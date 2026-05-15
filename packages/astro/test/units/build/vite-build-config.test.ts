@@ -6,9 +6,7 @@ import { createBasicSettings } from '../test-utils.ts';
 const noopIsRollupInput = () => false;
 
 /** Shorthand to call createViteBuildConfig with minimal defaults. */
-function buildConfig(
-	overrides: Partial<Parameters<typeof createViteBuildConfig>[0]> = {},
-) {
+function buildConfig(overrides: Partial<Parameters<typeof createViteBuildConfig>[0]> = {}) {
 	return createViteBuildConfig({
 		settings: overrides.settings!,
 		viteConfig: overrides.viteConfig ?? {},
