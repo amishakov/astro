@@ -28,7 +28,7 @@ describe('stage-preview-publish', () => {
 	});
 
 	test('stages affected packages with synthetic configs', () => {
-				execSync(`node ${scriptPath} ${outputDir}`, {
+		execSync(`node ${scriptPath} ${outputDir}`, {
 			cwd: fixtureDir,
 			env: {
 				...process.env,
@@ -58,7 +58,9 @@ describe('stage-preview-publish', () => {
 		assert.ok(existsSync(join(outputDir, 'packages', 'astro', 'dist', 'index.js')));
 
 		// affected-packages.json was written
-		const affected: string[] = JSON.parse(readFileSync(join(outputDir, 'affected-packages.json'), 'utf8'));
+		const affected: string[] = JSON.parse(
+			readFileSync(join(outputDir, 'affected-packages.json'), 'utf8'),
+		);
 		assert.deepEqual(affected, ['packages/astro']);
 	});
 
@@ -72,7 +74,7 @@ describe('stage-preview-publish', () => {
 	test('exits with error when AFFECTED_PACKAGES is empty', () => {
 		assert.throws(
 			() =>
-		execSync(`node ${scriptPath} ${outputDir}`, {
+				execSync(`node ${scriptPath} ${outputDir}`, {
 					cwd: fixtureDir,
 					env: { ...process.env, AFFECTED_PACKAGES: '[]' },
 					stdio: 'pipe',

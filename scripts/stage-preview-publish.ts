@@ -30,7 +30,10 @@ mkdirSync(stagingDir, { recursive: true });
 
 // Generate a minimal root package.json. The real one has workspace:* deps
 // (e.g. astro-benchmark) that reference packages not present in the artifact.
-writeFileSync(join(stagingDir, 'package.json'), JSON.stringify({ name: 'root', private: true }, null, '\t') + '\n');
+writeFileSync(
+	join(stagingDir, 'package.json'),
+	JSON.stringify({ name: 'root', private: true }, null, '\t') + '\n',
+);
 
 // Generate a minimal pnpm-workspace.yaml with just the packages glob.
 // The real one includes patchedDependencies, trustPolicy, onlyBuiltDependencies,
